@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suraj Birthday Special</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;
+ background:linear-gradient(135deg,#080018,#380044,#080018);
+ color:white;font-family:Arial;
+ display:flex;align-items:center;justify-content:center;
+ text-align:center;padding:18px;
+}
+.card{
+ width:100%;max-width:430px;
+ padding:28px 20px;
+ border:1px solid #ffffff50;
+ border-radius:25px;
+ background:#ffffff12;
+ box-shadow:0 0 30px #ff1493;
+}
+.page{display:none;animation:show 1s}
+.page.active{display:block}
+h1{color:#ffcf50;text-shadow:0 0 15px #ff1493}
+p{font-size:18px;line-height:1.8}
+.emoji{font-size:75px;margin:20px}
+button{
+ border:0;border-radius:30px;padding:14px 28px;
+ color:white;font-size:17px;font-weight:bold;
+ background:linear-gradient(90deg,#ff1493,#ffae00);
+ margin-top:20px;cursor:pointer;
+}
+@keyframes show{
+ from{opacity:0;transform:translateY(25px)}
+ to{opacity:1;transform:translateY(0)}
+}
+.heart{animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+</style>
+</head>
+
+<body>
+<div class="card">
+
+<!-- PAGE 1 -->
+<section class="page active">
+<div class="emoji">🎁</div>
+<h1>Special Surprise</h1>
+<p>Suraj ke liye ek special gift! ❤️</p>
+<p>Ready ho surprise ke liye?</p>
+<button onclick="next()">OPEN GIFT 🎁</button>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+<div class="emoji">✨</div>
+<h1>WELCOME SURAJ</h1>
+<p>Aaj ka din bahut khaas hai...</p>
+<p>Kyunki aaj tumhara birthday hai! ❤️</p>
+<button onclick="next()">NEXT ➜</button>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+<div class="emoji">🎉</div>
+<h1>IT'S YOUR DAY</h1>
+<p>Khushiyon ka din hai aaj!</p>
+<p>Enjoy every moment of your special day! 🥳</p>
+<button onclick="next()">NEXT ➜</button>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+<div class="emoji">🎂</div>
+<h1>HAPPY BIRTHDAY</h1>
+<h1 style="font-size:38px">SURAJ ❤️</h1>
+<p>Many Many Happy Returns of the Day!</p>
+<button onclick="next()">NEXT ➜</button>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page">
+<div class="emoji">🌹</div>
+<h1>EK SHAYARI</h1>
+<p>
+तेरी जिंदगी में खुशियों की बहार रहे,<br>
+हर दिन तेरा शानदार रहे।<br>
+जो भी सपना देखे तू,<br>
+वो सपना एक दिन साकार रहे। ❤️
+</p>
+<button onclick="next()">NEXT ➜</button>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page">
+<div class="emoji">💫</div>
+<h1>SPECIAL WISHES</h1>
+<p>
+May your life be filled with happiness,<br>
+success, love and endless smiles!
+</p>
+<p>Keep Shining Suraj! ✨</p>
+<button onclick="next()">NEXT ➜</button>
+</section>
+
+<!-- PAGE 7 -->
+<section class="page">
+<div class="emoji">💐</div>
+<h1>DUA HAI</h1>
+<p>
+हर मंजिल तुम्हारे करीब हो,<br>
+हर ख्वाब तुम्हारा पूरा हो।<br>
+चेहरे पर हमेशा मुस्कान रहे,<br>
+तुम्हारा हर दिन खुशियों से भरा हो। ❤️
+</p>
+<button onclick="next()">NEXT ➜</button>
+</section>
+
+<!-- PAGE 8 -->
+<section class="page">
+<div class="emoji">👑</div>
+<h1>STAY BLESSED</h1>
+<p>Hamesha haste rehna,</p>
+<p>Apne sapno ko poora karna,</p>
+<p>Aur life mein khoob tarakki karna! 🌟</p>
+<button onclick="next()">NEXT ➜</button>
+</section>
+
+<!-- PAGE 9 -->
+<section class="page">
+<div class="emoji">❤️</div>
+<h1>FROM RAVAN</h1>
+<p>Ravan ki taraf se tumhe</p>
+<h1>ढेर सारी शुभकामनाएँ! 💐</h1>
+<p>Khush raho, muskurate raho aur hamesha aage badhte raho!</p>
+<button onclick="next()">FINAL SURPRISE 🔥</button>
+</section>
+
+<!-- PAGE 10 -->
+<section class="page">
+<div class="emoji heart">🎉❤️🎂</div>
+<h1>HAPPY BIRTHDAY</h1>
+<h1 style="font-size:36px">SURAJ</h1>
+<p>एक बार फिर जन्मदिन की ढेर सारी शुभकामनाएँ!</p>
+<p>तुम्हारा हर दिन खुशियों से भरा रहे। ❤️</p>
+<hr style="border-color:#ffffff40">
+<h1 style="font-size:27px">༒☠︎  RAVAN ☠︎༒</h1>
+<p>With Lots of Wishes & Love ❤️</p>
+<small>Made by RAVAN</small>
+<br>
+<button onclick="location.reload()">WATCH AGAIN 🔁</button>
+</section>
+
+</div>
+
+<script>
+let current=0;
+const pages=document.querySelectorAll(".page");
+
+function next(){
+ if(current<pages.length-1){
+  pages[current].classList.remove("active");
+  current++;
+  pages[current].classList.add("active");
+ }
+}
+</script>
+</body>
+</html>
